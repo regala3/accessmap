@@ -15,14 +15,14 @@ import { app, server } from "./lib/socket.js";
 dotenv.config();
 
 const PORT = process.env.PORT;
+const FRONTEND_URL = process.env.FRONTEND_URL;
 app.use(express.json({ limit: '10mb' }));
 app.use(express.urlencoded({ extended: true, limit: '10mb' }));
 
 app.use(cookieParser());
 app.use(cors({
-  origin: process.env.FRONTEND_URL,
+  origin: FRONTEND_URL,
   methods: ["GET", "POST", "PUT", "DELETE"],
-  allowedHeaders:["Content-Type", "Authorization"],
   credentials: true,
 }));
 
