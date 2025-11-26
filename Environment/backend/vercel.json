@@ -2,7 +2,7 @@
   "version": 2,
   "builds": [
     {
-      "src": "server/index.js",
+      "src": "/index.js",
       "use": "@vercel/node"
     },
     {
@@ -11,6 +11,19 @@
       "config": {
         "distDir": "dist"
       }
+    },
+    {
+      "headers": [
+        {
+          "source": "/api/(.*)",
+          "headers": [
+            {"key": "Access-Control-Allow-Origins", "value": "https://accessiblemap.org"},
+            {"key": "Access-Control-Allow-Methods", "value": "GET, POST, DELETE, OPTIONS"},
+            {"key": "Access-Control-Allow-Headers", "value": "Content-Type, Authorization"},
+            {"key": "Access-Control-Allow-Credentials", "value": "true"}
+          ]
+        }
+      ]
     }
   ],
   "rewrites": [
