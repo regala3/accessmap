@@ -26,7 +26,7 @@ app.use(cors({
   credentials: true,
 }));
 
-
+console.log(FRONTEND_URL);
 app.use("/api/auth", authRoutes);
 app.use("/api/messages", messageRoutes);
 app.use("/api/events", eventRoutes); 
