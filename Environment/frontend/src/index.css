@@ -1,0 +1,41 @@
+@import "tailwindcss";
+@plugin "daisyui" {
+  themes: 
+    light --default, 
+    dark --prefersdark;
+}
+
+.leaflet-geosearch-bar {
+  z-index: 10 !important;
+}
+
+.leaflet-control-geosearch form {
+    top: 4.5rem !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    position: absolute !important;
+    font-size: 1.1rem !important;
+    width: 25rem;
+    border-radius: 0.5rem !important;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+}
+
+.leaflet-control-geosearch form input {
+    font-size: 1.1rem !important;
+    border-radius: 0.5rem !important;
+}
+
+.leaflet-control-geosearch .results {
+  z-index: 50 !important;
+}
+
+.leaflet-control-geosearch .results > *:hover {
+  background: #f6f1ff !important; /* soft purple */
+  border-radius: 0.5rem !important;
+  cursor: pointer;
+}
+
+.leaflet-control { z-index: 0 !important}
+.leaflet-pane { z-index: 0 !important}
+.leaflet-top, .leaflet-bottom {z-index: 0 !important}

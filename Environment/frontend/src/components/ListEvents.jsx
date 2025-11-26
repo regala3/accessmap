@@ -1,0 +1,1 @@
+// to abstract functionality implemented on home page to list/edit/delete events
